@@ -3,7 +3,7 @@ package cn.numeron.inject
 import cn.numeron.inject.chain.InjectChain
 import cn.numeron.inject.chain.InjectInterceptor
 import cn.numeron.inject.chain.Interceptor
-import cn.numeron.inject.chain.SingletonInterceptor
+import cn.numeron.inject.chain.CacheInterceptor
 import kotlin.reflect.KProperty
 
 class Inject private constructor(
@@ -12,7 +12,7 @@ class Inject private constructor(
 ) {
 
     private val internalInterceptors = listOf(
-        SingletonInterceptor(),
+        CacheInterceptor(),
         InjectInterceptor(producerFactories)
     )
 
